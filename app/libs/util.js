@@ -1,35 +1,19 @@
-const fs = require('fs');
-const path = require('path');
-const qs = require('querystring');
-const url = require('url');
+const parserString = require('xml2js').parseString;
 
-//import routes or utils
-class GetName {
-  constructor () {
-    fs.appendFile('index.html', 'xiadd', err => {
-      console.log(err);
-    });
-
-    path.resolve();
+//将xml转为obj对象
+exports.convertXMLtoJSON = function (xml) {
+  if (typeof xml !== 'string') {
+    console.error('请输入合法的xml字符串');
+    return ;
   }
 
-  get () {
-
-  }
-
-  set () {
-
-  }
-
-  checkLogin () {
-
-  }
-
-  filterLogin () {
-
-  }
-
-  
-}
-
-module.exports = new GetName();
+  return new Promise((resolve, reject) => {
+    parserString(xml,  function (err, results) {
+      if(err) {
+        reject(err);
+      }else {
+        resolve(results);
+      }
+    })
+  })
+};
