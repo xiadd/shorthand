@@ -35,4 +35,5 @@ function wechatAuth(req, res) {
   }
 }
 
+
 module.exports = wechatAuth;
