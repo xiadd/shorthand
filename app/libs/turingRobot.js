@@ -14,7 +14,6 @@ function getTuringResponse(info) {
   };
   return new Promise((resolve, reject) => {
     request(options, function (err, res, body) {
-      console.log(body)
       if (res) {
         resolve(body);
       } else {
