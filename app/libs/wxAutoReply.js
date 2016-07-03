@@ -1,4 +1,12 @@
+//自动回复消息
 const request = require('request');
+
+/**
+ *
+ * @param requestData {object} 收到的信息的内容
+ * @param info {string} 返回消息的内容
+ * @returns {string} 返回xml字符串用作消息内容
+ */
 
 function autoReply(requestData, info) {
   switch (requestData.msgtype) {
