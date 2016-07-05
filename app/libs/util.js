@@ -1,4 +1,5 @@
 const parserString = require('xml2js').parseString;
+const fs = require('fs');
 
 //将xml转为obj对象
 exports.convertXMLtoJSON = function (xml) {
@@ -16,4 +17,14 @@ exports.convertXMLtoJSON = function (xml) {
       }
     })
   })
+};
+
+//判断文件是否存在
+
+exports.isExistSync = function (path) {
+  try {
+    return typeof fs.statSync(path) === 'object';
+  } catch (e) {
+    return false;
+  }
 };
