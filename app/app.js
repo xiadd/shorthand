@@ -5,6 +5,10 @@ const path = require('path');
 const bodyParser = require('body-parser');
 require('body-parser-xml')(bodyParser);
 
+//引入token刷新
+const getToken = require('./libs/common');
+getToken();
+
 //引入路由
 const weixin = require('./routes/weixin');
 
