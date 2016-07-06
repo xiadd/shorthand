@@ -13,7 +13,6 @@ router.post('/', function (req, res) {
     var resMsg = autoReply('text', req.body.xml, '欢迎关注');
     res.end(resMsg);
   }
-  
 });
 
 module.exports = router;
