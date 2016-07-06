@@ -50,11 +50,11 @@ function getSign(jsApiTicket, noncestr, timestamp, url) {
 }
 
 //返回数据分别为sign, timestamp, noncestr
-function getJsApiData() {
+function getJsApiData(clientUrl) {
   let noncestr = getNonceStr();
   let timestamp = getTimestamp();
   return getJsApiTicket().then(data => {
-    return [getSign(JSON.parse(data).ticket, noncestr, timestamp, 'http://wuyrsp3tma.proxy.qqbrowser.cc/auth'), timestamp, noncestr];
+    return [getSign(JSON.parse(data).ticket, noncestr, timestamp, clientUrl), timestamp, noncestr];
   })
 }
 
