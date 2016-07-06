@@ -9,13 +9,18 @@ require('body-parser-xml')(bodyParser);
 const getToken = require('./libs/common');
 getToken();
 
+//创建菜单
+const createMenu = require('./libs/wxCustomeMenu');
+createMenu();
+
+
 //引入路由
 const weixin = require('./routes/weixin');
+const auth = require('./routes/auth');
 
 //app配置
 const app = express();
 app.use(AV.express());
-app.use(express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
 
 //解析xml
@@ -34,5 +39,6 @@ app.set('view engine', 'html');
 
 //启用路由
 app.use('/wechat', weixin);
+app.use(auth);
 
 module.exports = app;

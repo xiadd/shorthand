@@ -1,4 +1,5 @@
 const AV = require('leanengine');
+const express = require('express');
 
 AV.init({
   appId: process.env.LEANCLOUD_APP_ID,
@@ -6,11 +7,11 @@ AV.init({
   masterKey: process.env.LEANCLOUD_APP_MASTER_KEY
 });
 
-// 如果不希望使用 masterKey 权限，可以将下面一行删除
+//是否启用masterkey
 AV.Cloud.useMasterKey();
 
 const app = require('./app/app');
-
+app.use(express.static('./app/public'));
 const PORT = parseInt(process.env.LEANCLOUD_APP_PORT || 3000);
 
 //启动服务器

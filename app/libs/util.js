@@ -1,5 +1,6 @@
 const parserString = require('xml2js').parseString;
 const fs = require('fs');
+const crypto = require('crypto');
 
 //将xml转为obj对象
 exports.convertXMLtoJSON = function (xml) {
@@ -28,3 +29,10 @@ exports.isExistSync = function (path) {
     return false;
   }
 };
+
+exports.sha1 = function (str) {
+  var shasum = crypto.createHash("sha1");
+  shasum.update(str);
+  str = shasum.digest("hex");
+  return str;
+}
