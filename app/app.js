@@ -17,6 +17,7 @@ createMenu();
 //引入路由
 const weixin = require('./routes/weixin');
 const auth = require('./routes/auth');
+const userinfo = require('./routes/userinfo');
 
 //app配置
 const app = express();
@@ -40,5 +41,6 @@ app.set('view engine', 'html');
 //启用路由
 app.use('/wechat', weixin);
 app.use(auth);
+app.use(userinfo);
 
 module.exports = app;
