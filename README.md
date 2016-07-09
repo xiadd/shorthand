@@ -1,3 +1,6 @@
+### ATTENTION PLEASE
+注意啊,之前不小心把配置文件也传上去,不要用我的秘钥啊。。。把我的次数都用完了。
+
 ### shorthand
 shorthand公众号开源，基于node，新手坑慎入
 
