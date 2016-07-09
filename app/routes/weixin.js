@@ -12,6 +12,13 @@ router.post('/', function (req, res) {
   if (req.body.xml.event === 'subscribe') {
     var resMsg = autoReply('text', req.body.xml, '欢迎关注');
     res.end(resMsg);
+  } else {
+    var info = encodeURI(req.body.xml.content);
+    turingRobot(info).then(function (data) {
+      var response = JSON.parse(data);
+      var resMsg = autoReply('text', req.body.xml, response.text);
+      res.end(resMsg);
+    })
   }
 });
 

@@ -22,6 +22,17 @@
         components:{
             'other-component':OtherComponent,
             HeaderComponent,
+        },
+        ready () {
+
+        },
+
+        watch: {
+
+        },
+
+        computed: {
+
         }
     }
 </script>
