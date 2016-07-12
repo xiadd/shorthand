@@ -8,13 +8,12 @@ var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 module.exports = {
   entry: {
-    index: [path.resolve(__dirname, '../client/main.js'), hotMiddlewareScript],
-    demo: [path.resolve(__dirname, '../client/demo.js'), hotMiddlewareScript]
+    index: [path.resolve(__dirname, '../client/main.js'), hotMiddlewareScript]
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../public/dist'),
     publicPath: '/dist/',
-    filename: '[name].build.js'
+    filename: 'build.js'
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
