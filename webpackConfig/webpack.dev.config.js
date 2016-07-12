@@ -1,17 +1,23 @@
 /**
  * Created by xiadd on 7/11/16.
  */
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
+
+var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
+
 module.exports = {
-  entry: path.resolve(__dirname,'../src/main.js'),
+  entry: {
+    index: [path.resolve(__dirname, '../client/main.js'), hotMiddlewareScript],
+    demo: [path.resolve(__dirname, '../client/demo.js'), hotMiddlewareScript]
+  },
   output: {
-    path: path.resolve(__dirname, '../public/dist'),
+    path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: '[name].build.js'
   },
   resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
+    root: path.join(__dirname, 'node_modules')
   },
   module: {
     loaders: [
@@ -66,26 +72,8 @@ module.exports = {
   devtool: '#eval-source-map',
   vue: {
     loaders: {
-      sass: 'style!css!sass?indentedSyntax',
       scss: 'style!css!sass'
     }
   }
-}
+};
 
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vuejs.github.io/vue-loader/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.optimize.OccurenceOrderPlugin()
-  ])
-}

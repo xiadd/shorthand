@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev supervisor server",
-    "build": "webpack --config config/webpack.prod.config.js -p"
+    "build": "webpack --config webpackConfig/webpack.prod.config.js -p"
   },
   "repository": {
     "type": "git",
@@ -36,10 +36,6 @@
     "node": "4.x"
   },
   "devDependencies": {
-    "log4js": "^0.6.37",
-    "vue": "^1.0.26",
-    "vue-router": "^0.7.13",
-    "webpack": "^1.13.1",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
     "babel-plugin-transform-runtime": "^6.0.0",
@@ -50,14 +46,19 @@
     "css-loader": "^0.23.0",
     "file-loader": "^0.8.4",
     "json-loader": "^0.5.4",
+    "log4js": "^0.6.37",
+    "reload": "^1.0.0",
     "url-loader": "^0.5.7",
+    "vue": "^1.0.26",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^8.2.1",
     "vue-resource": "^0.7.0",
+    "vue-router": "^0.7.13",
     "vue-style-loader": "^1.0.0",
-    "webpack-dev-server": "^1.12.0",
+    "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.12.0",
     "webpack-hot-middleware": "^2.10.0"
   }
 }

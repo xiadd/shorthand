@@ -2,9 +2,9 @@ const AV = require('leanengine');
 const express = require('express');
 
 AV.init({
-  appId: process.env.LEANCLOUD_APP_ID,
-  appKey: process.env.LEANCLOUD_APP_KEY,
-  masterKey: process.env.LEANCLOUD_APP_MASTER_KEY
+  appId: 'C2yCiRi9yETYr8RvEJvs276d-gzGzoHsz',
+  appKey: 'O4zRMgWdUMj6H3PJQMJ7RHpg',
+  masterKey: '9Kc9CjYKKr3EQdRX3buxSRC5'
 });
 
 //是否启用masterkey
@@ -18,9 +18,9 @@ const PORT = parseInt(process.env.LEANCLOUD_APP_PORT || 3000);
 var isDev = process.env.NODE_ENV === 'dev';
 if(isDev){
   var webpack = require('webpack'),
-    webpackDevMiddleware = require('webpack-dev-middleware'),
-    webpackHotMiddleware = require('webpack-hot-middleware'),
-    webpackDevConfig = require('./wepackConfig/webpack.dev.config.js');
+      webpackDevMiddleware = require('webpack-dev-middleware'),
+      webpackHotMiddleware = require('webpack-hot-middleware'),
+    webpackDevConfig = require('./webpackConfig/webpack.dev.config.js');
 
   var compiler = webpack(webpackDevConfig);
 
