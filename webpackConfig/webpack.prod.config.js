@@ -4,7 +4,7 @@
 var path = require('path')
 var webpack = require('webpack')
 module.exports = {
-  entry: path.resolve(__dirname,'../client/main.js'),
+  entry: path.resolve(__dirname, '../client/main.js'),
   output: {
     path: path.resolve(__dirname, '../public/dist'),
     publicPath: '/dist/',
@@ -70,7 +70,7 @@ module.exports = {
       scss: 'style!css!sass'
     }
   }
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = false;

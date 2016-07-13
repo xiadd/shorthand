@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index</h1>
+    <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid={{appId}}&redirect_uri=http%3A%2F%2Fwuyrsp3tma.proxy.qqbrowser.cc%2Fuser&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">授权</a>
+    <script src="scripts/jweixin.js"></script>
+    <script>
+        wx.config({
+            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: '{{appId}}', // 必填，公众号的唯一标识
+            timestamp: '{{timestamp}}', // 必填，生成签名的时间戳
+            nonceStr: '{{nonceStr}}', // 必填，生成签名的随机串
+            signature: '{{signature}}',// 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+        wx.ready(function () {
+            wx.onMenuShareTimeline({
+                title: '测试', // 分享标题
+                link: 'xiadd.me', // 分享链接
+                imgUrl: '', // 分享图标
+                success: function () {
+                    console.log('success');
+                },
+                cancel: function () {
+                    console.log('canceled')
+                }
+            });
+        })
+    </script>
+</body>
+</html>
