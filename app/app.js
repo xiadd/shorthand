@@ -22,7 +22,7 @@ const userinfo = require('./routes/userinfo');
 //app配置
 const app = express();
 app.use(AV.express());
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 
 //解析xml
 app.use(bodyParser.xml({
@@ -42,5 +42,9 @@ app.set('view engine', 'html');
 app.use('/wechat', weixin);
 app.use(auth);
 app.use(userinfo);
+
+app.get('/', function (req, res) {
+  res.render('index.html');
+});
 
 module.exports = app;
