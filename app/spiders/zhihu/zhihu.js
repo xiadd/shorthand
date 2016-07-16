@@ -19,12 +19,10 @@ function getZhihuContent() {
     url: 'https://www.zhihu.com/topic/19550517/top-answers',
     method: 'get',
     qs: {
-      page: 1
+      page: 12
     },
     headers: {
-      'Cookie': config.zhihuCookie,
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36',
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      'Cookie': config.zhihuCookie
     }
   };
   request(options, function (err, res, body) {
