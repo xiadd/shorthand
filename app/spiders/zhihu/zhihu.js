@@ -2,9 +2,39 @@
 /**
  * Created by xiadd on 7/14/16.
  */
-const request = require('request');
 const cheerio = require('cheerio');
 const config = require('../../../config');
+const Promise = require('bluebird');
+const request = Promise.promisifyAll(require('request'));
+const api = require('./api');
+
+function getAllTopicsHref() {
+  let topicsArr = [];
+  return request.getAsync({
+    url: api.topicUrl
+  }).then(res => {
+    let $ = cheerio.load(res.body);
+    let topics = $('.zm-topic-cat-item>a');
+    topics.each((i, v) => {
+      topicsArr.push(api.topicUrl + v.attribs.href);
+    });
+    return topicsArr;
+  })
+}
+
+function getChildrenTopics() {
+  let childrenTopics = {};
+  getAllTopicsHref().then(data => {
+    data.forEach(v => {
+      let topicHref = v;
+      request({
+        method: 'get',
+        url: topicHref
+      })
+    });
+    console.log(childrenTopics)
+  })
+}
 
 function extractContent(content) {
   if (typeof content !== 'string') {
@@ -26,8 +56,12 @@ function getZhihuContent() {
     }
   };
   request(options, function (err, res, body) {
-    console.log(extractContent(body))
+    let data = extractContent(body).split('\n');
+    data = data.filter(v => {
+      return v.length > 0;
+    });
+    console.log(data)
   })
 }
 
-module.exports = getZhihuContent;
+module.exports = getChildrenTopics;
