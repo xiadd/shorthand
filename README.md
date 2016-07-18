@@ -6,6 +6,9 @@
 
 ### shorthand
 shorthand公众号开源，基于node，新手坑慎入
+`npm run dev`执行开发环境
+`npm run build`打包
+`lean up` or `node server.js` 生产环境
 
 ### 不定期更新
 
