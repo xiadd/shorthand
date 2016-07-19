@@ -1,8 +1,13 @@
 # 知乎日报
+
 1. 最新推荐
+
 请求方式: get
+
 接口地址:`http://news-at.zhihu.com/api/4/news/latest`
+
 返回数据:
+
 ```json
 {
   "date": "20160720",
@@ -15,7 +20,7 @@
       ],
       "multipic": true,
       "type": 0,
-      get"id": 8585811
+      "id": 8585811
     },
     ...
   ],
@@ -33,9 +38,13 @@
 ```
 
 2. 单条消息详细内容
+
 请求方式: get
+
 接口地址: `http://news-at.zhihu.com/api/4/news/:id`
+
 返回数据:
+
 ```json
 {
   "body": "<div class="main-wrap content-wrap">...</div>",
