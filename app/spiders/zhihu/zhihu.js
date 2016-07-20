@@ -25,6 +25,7 @@ function getAllTopicsHref() {
 function getChildrenTopics() {
   let childrenTopics = {};
   getAllTopicsHref().then(data => {
+    console.log(data)
     data.forEach(v => {
       let topicHref = v;
       request({
