@@ -44,6 +44,7 @@ app.use(auth);
 app.use(userinfo);
 
 app.get('/', function (req, res) {
+  console.log(1);
   res.render('index.html');
 });
 
