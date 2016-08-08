@@ -1,8 +1,48 @@
+# 知乎个人信息
+
+### 粉丝列表
+
+请求方式: `post`
+
+接口地址: `https://www.zhihu.com/node/ProfileFolloweesListV2`
+
+必须headers: `Cookie` 和 `X-Xsrftoken` (注:直接使用看到的即可,暂时未发现有问题)
+
+必须参数: `body`
+
+```json
+{
+    method: 'next',
+    params: '{"offset":40,"order_by":"created","hash_id":"8e54246e804fef8aa43434190f1c1870"}'//其中offset代表数据量,
+}
+```
+
+返回数据:
+
+```json
+{
+    r: 0,
+    msg: []//内部数据,需要自行解析,每次20个数据,都为html片段。
+}
+```
+
+### 获得赞数以及关详细信息
+
+这部分的前提是已经抓取到个人页面。
+
+需要自行解析html。这里以jquery(cheerio)为例进行获取数据。
+
+`$('.zm-profile-header-user-agree>strong').text()` 获取获得的赞数
+
+`$('.zm-profile-header-user-thanks>strong').text()` 获取获得的感谢数
+
+`$('.profile-navbar .num').text(function foo (i, v) {console.log(v)})` 分别获取提问,回答数,文章,收藏,公共编辑
+
 # 知乎日报
 
-1. 最新推荐
+### 最新推荐
 
-请求方式: get
+请求方式: `get`
 
 接口地址:`http://news-at.zhihu.com/api/4/news/latest`
 
@@ -37,7 +77,7 @@
 }
 ```
 
-2. 单条消息详细内容
+### 单条消息详细内容
 
 请求方式: get
 
