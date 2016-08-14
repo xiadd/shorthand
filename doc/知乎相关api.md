@@ -38,6 +38,8 @@
 
 `$('.profile-navbar .num').text(function foo (i, v) {console.log(v)})` 分别获取提问,回答数,文章,收藏,公共编辑
 
+`$('.zm-profile-side-following strong:first').text()` 关注数。
+
 # 知乎日报
 
 ### 最新推荐

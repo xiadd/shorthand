@@ -10,4 +10,8 @@ AV.Cloud.define('hello', function (request, response) {
   response.success('Hello world!');
 });
 
+AV.Cloud.define('getUsers', function (req, res) {
+
+});
+
 module.exports = AV.Cloud;
