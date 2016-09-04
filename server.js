@@ -2,9 +2,9 @@ const AV = require('leanengine');
 const express = require('express');
 
 AV.init({
-  appId: 'C2yCiRi9yETYr8RvEJvs276d-gzGzoHsz',
-  appKey: 'O4zRMgWdUMj6H3PJQMJ7RHpg',
-  masterKey: '9Kc9CjYKKr3EQdRX3buxSRC5'
+  appId: '',
+  appKey: '',
+  masterKey: ''
 });
 
 //是否启用masterkey
