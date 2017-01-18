@@ -4,6 +4,7 @@ shorthand公众号开源，基于node，新手坑慎入
 `npm run build`打包
 `lean up` or `node server.js` 生产环境
 
+![微信开发交流群](https://ooo.0o0.ooo/2017/01/18/587f314e8ac5a.png)
 ### 不定期更新
 
 - [nodejs微信开发---接入指南](https://segmentfault.com/a/1190000005856154)
