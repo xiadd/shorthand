@@ -1,3 +1,5 @@
+## 不再更新: 可以移步 [基于koa2的微信开发](https://github.com/xiadd/miniweather)
+
 ### shorthand
 shorthand公众号开源，基于node，新手坑慎入
 `npm run dev`执行开发环境
