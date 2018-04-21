@@ -1,5 +1,9 @@
 ## 不再更新: 可以移步 [基于koa2的微信开发](https://github.com/xiadd/miniweather)
 
+如果你觉得这个代码有点帮助的话, 请点击下面搬瓦工链接注册一下, 我也收获点aff支撑服务器运营:
+
+#### [搬瓦工](https://bandwagonhost.com/aff.php?aff=30537)
+
 ### shorthand
 shorthand公众号开源，基于node，新手坑慎入
 `npm run dev`执行开发环境
